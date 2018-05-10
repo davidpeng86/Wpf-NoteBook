@@ -1,0 +1,15 @@
+C:\Users\miffy\Desktop\Note\Note\bin\Debug\Note.exe.config
+C:\Users\miffy\Desktop\Note\Note\bin\Debug\Note.exe
+C:\Users\miffy\Desktop\Note\Note\bin\Debug\Note.pdb
+C:\Users\miffy\Desktop\Note\Note\obj\Debug\Note.csprojResolveAssemblyReference.cache
+C:\Users\miffy\Desktop\Note\Note\obj\Debug\MainWindow.g.cs
+C:\Users\miffy\Desktop\Note\Note\obj\Debug\App.g.cs
+C:\Users\miffy\Desktop\Note\Note\obj\Debug\Note_MarkupCompile.cache
+C:\Users\miffy\Desktop\Note\Note\obj\Debug\Note_MarkupCompile.lref
+C:\Users\miffy\Desktop\Note\Note\obj\Debug\MainWindow.baml
+C:\Users\miffy\Desktop\Note\Note\obj\Debug\Note.g.resources
+C:\Users\miffy\Desktop\Note\Note\obj\Debug\Note.Properties.Resources.resources
+C:\Users\miffy\Desktop\Note\Note\obj\Debug\Note.csproj.GenerateResource.cache
+C:\Users\miffy\Desktop\Note\Note\obj\Debug\Note.csproj.CoreCompileInputs.cache
+C:\Users\miffy\Desktop\Note\Note\obj\Debug\Note.exe
+C:\Users\miffy\Desktop\Note\Note\obj\Debug\Note.pdb

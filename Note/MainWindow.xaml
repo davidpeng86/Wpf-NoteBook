@@ -1,0 +1,34 @@
+﻿<Window x:Class="Note.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Note"
+        mc:Ignorable="d" AllowsTransparency="True"
+        Title="MainWindow" WindowStyle="None" BorderThickness="0"
+		Height="450" Width="800">
+    <Grid>
+		<!--define collumns-->
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition></ColumnDefinition>
+			<ColumnDefinition Width=" 200">
+			</ColumnDefinition>
+		</Grid.ColumnDefinitions>
+		
+		<!--Content-->
+		<Rectangle Grid.Column="1" Fill="Gray"></Rectangle>
+		<StackPanel Grid.Column="1" Margin=" 0 10 0 0">
+			<Button Width="100" Height="30" x:Name="OpenBtn" Click="OpenBtn_Click" Margin=" 0 0 0 10"> Open </Button>
+			<Button Width="100" Height="30" x:Name="SaveBtn" Click="SaveBtn_Click"> Save </Button>
+		</StackPanel>
+		
+		<!--Left note taking area-->
+		<ScrollViewer VerticalScrollBarVisibility="Auto">
+			<TextBox x:Name="TextArea" AcceptsReturn="True" TextWrapping="Wrap"></TextBox>
+		</ScrollViewer>
+
+		<StackPanel Height="40" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right">
+			<Ellipse Width="15" Height="15" Fill="#77FFCFBA" Margin="8" x:Name="CloseBtn" MouseLeftButtonDown="CloseBtn_MouseLeftButtonDown"></Ellipse>
+		</StackPanel>
+	</Grid>
+</Window>
