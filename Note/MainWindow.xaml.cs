@@ -27,9 +27,11 @@ namespace Note
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
+            // Choose path to save
             Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
 
             Nullable<bool> result = dlg.ShowDialog();
+            // Save context to a created file
             if (result == true)
             {
                 System.IO.File.WriteAllText(dlg.FileName, TextArea.Text);
@@ -43,6 +45,7 @@ namespace Note
             Nullable<bool> result = dlg.ShowDialog();
             if (result == true)
             {
+                // Display text from a chosen file
                 TextArea.Text = System.IO.File.ReadAllText(dlg.FileName);
             }
         }
