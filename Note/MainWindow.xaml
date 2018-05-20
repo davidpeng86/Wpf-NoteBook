@@ -7,52 +7,70 @@
         mc:Ignorable="d" AllowsTransparency="True"
         Title="MainWindow" WindowStyle="None" BorderThickness="0"
 		Height="450" Width="800" Background="Transparent">
-    <Grid>
+    <Grid x:Name="BaseGrid" MouseLeftButtonDown="BaseGrid_MouseLeftButtonDown">
 		<!--define collumns-->
 		<Grid.ColumnDefinitions>
-			<ColumnDefinition>
-			</ColumnDefinition>
 			<ColumnDefinition Width=" 200">
+			</ColumnDefinition>
+			<ColumnDefinition >
 			</ColumnDefinition>
 		</Grid.ColumnDefinitions>
 		
 		<!--Content-->
-		<Border Grid.Column="1" CornerRadius=" 0 20 20 0" Background="Gray"></Border>
-		<StackPanel Grid.Column="1" Margin=" 0 10 0 0">
-			<Button Width="100" Height="30" x:Name="OpenBtn" Click="OpenBtn_Click" Margin=" 0 30 0 20">
-				<Button.Template>
-					<ControlTemplate>
-						<Border CornerRadius="10" Background="Wheat">
-							<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
-								OPEN
-							</TextBlock>
-						</Border>
-					</ControlTemplate>
-				</Button.Template>
-				
-			</Button>
-			<Button Width="100" Height="30" x:Name="SaveBtn" Click="SaveBtn_Click">
-				<Button.Template>
-					<ControlTemplate>
-						<Border CornerRadius="10" Background="Wheat">
-							<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
-								SAVE
-							</TextBlock>
-						</Border>
-					</ControlTemplate>
-				</Button.Template>
-			</Button>
+		<Border Grid.Column="0" Background="Black"></Border>
+		<StackPanel Grid.Column="0" Margin=" 0 10 0 0">
+			<TextBlock Margin="0 40 0 10" Width="100" VerticalAlignment="Center"  x:Name="NewBtn" MouseLeftButtonDown= "NewBtn_Click" FontSize="16" Foreground="White">
+				New
+			</TextBlock>
+			<TextBlock Margin="0 10" Width="100" VerticalAlignment="Center"  x:Name="OpenBtn" MouseLeftButtonDown="OpenBtn_Click" FontSize="16" Foreground="White">
+				Open
+			</TextBlock>
+			<TextBlock Margin="0 10" Width="100" VerticalAlignment="Center" x:Name="SaveBtn" MouseLeftButtonDown="SaveBtn_Click" FontSize="16" Foreground="White">
+					Save
+			</TextBlock>
+			<TextBlock Margin="0 10" Width="100" VerticalAlignment="Center" x:Name="SaveAsBtn" MouseLeftButtonDown="SaveAsBtn_Click" FontSize="16" Foreground="White">
+					Save As
+			</TextBlock>
+
+			<!-- FontSize selection-->
+			<StackPanel Width="100" Height="60" Orientation="Horizontal" Margin="0">
+				<TextBlock x:Name="SmallFont" Margin="0 10 10 12" VerticalAlignment="Bottom" FontFamily="Times New Roman" FontSize="14" Foreground="White" MouseLeftButtonDown="SmallFont_MouseLeftButtonDown">
+					A
+				</TextBlock>
+
+				<TextBlock x:Name="MidFont" Margin="10 10 10 11" VerticalAlignment="Bottom"  FontFamily="Times New Roman" FontSize="18" Foreground="White" MouseLeftButtonDown="MidFont_MouseLeftButtonDown">
+					A
+				</TextBlock>
+
+				<TextBlock x:Name="BigFont" Margin="10 10 10 9" VerticalAlignment="Bottom"  FontFamily="Times New Roman" FontSize="22" Foreground="White" MouseLeftButtonDown="BigFont_MouseLeftButtonDown">
+					A
+				</TextBlock>
+			</StackPanel>
+
+			<!--Theme -->
+			<StackPanel Width="100" Height="60" Orientation="Horizontal">
+				<Ellipse x:Name="ThemeBtn"  Width="30" Height="30" Fill="#202020" Stroke="DarkGray" StrokeThickness="5" MouseLeftButtonDown="ThemeBtn_MouseLeftButtonDown">
+				</Ellipse>
+			</StackPanel>
 		</StackPanel>
+
+		<!--Right note taking area-->
 		
-		<!--Left note taking area-->
-		<Border CornerRadius=" 20 0 0 20" Background="White">
-			<ScrollViewer  VerticalScrollBarVisibility="Auto" Margin="30 30 0 30">
-				<TextBox  x:Name="TextArea" BorderThickness="0" Background="Transparent" AcceptsReturn="True" TextWrapping="Wrap" FontSize="14"></TextBox>
-			</ScrollViewer>
+		<Border x:Name="TxtBorder" Grid.Column="1" Background="White">
+			<StackPanel>
+				<TextBox Height="50" Margin="20 0" x:Name="Title" Grid.Column="1" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="18" BorderThickness="0" Background="Transparent">
+					Welcome!
+				</TextBox>
+				<ScrollViewer  VerticalScrollBarVisibility="Auto" Margin="0 0 0 30">
+					<TextBox Width="550" Height="400" x:Name="TextArea" BorderThickness="0" Background="Transparent" AcceptsReturn="True" TextWrapping="Wrap" FontSize="14" ></TextBox>
+				</ScrollViewer>
+			</StackPanel>
 		</Border>
 
-		<StackPanel Height="40" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right">
-			<Ellipse Width="15" Height="15" Fill="#77FFCFBA" Margin="8" x:Name="CloseBtn" MouseLeftButtonDown="CloseBtn_MouseLeftButtonDown"></Ellipse>
+		<StackPanel Width="75" Height="30" Margin="5" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right">
+			<TextBlock x:Name="minBtn" Margin="0 0 5 0" Height="20" FontSize="20" FontFamily="Webdings" MouseLeftButtonDown="MinBtn_MouseLeftButtonDown"> 0</TextBlock>
+			<TextBlock x:Name="MaxBtn" Margin="0 0 5 0" Height="20" FontSize="20" FontFamily="Webdings" MouseLeftButtonDown="MaxBtn_MouseLeftButtonDown"> 1</TextBlock>
+			<TextBlock x:Name="CloseBtn" Margin="0 0 5 0" Height="20" FontSize="20" FontFamily="Webdings"  MouseLeftButtonDown="CloseBtn_MouseLeftButtonDown"> r</TextBlock>
 		</StackPanel>
 	</Grid>
 </Window>
