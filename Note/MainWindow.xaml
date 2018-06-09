@@ -7,7 +7,8 @@
         mc:Ignorable="d" AllowsTransparency="True"
         Title="MainWindow" WindowStyle="None" BorderThickness="0"
 		Height="450" Width="800" Background="Transparent">
-    <Grid x:Name="BaseGrid" MouseLeftButtonDown="BaseGrid_MouseLeftButtonDown">
+    <Grid>
+		
 		<!--define collumns-->
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width=" 200">
@@ -15,9 +16,10 @@
 			<ColumnDefinition >
 			</ColumnDefinition>
 		</Grid.ColumnDefinitions>
-		
+
 		<!--Content-->
-		<Border Grid.Column="0" Background="Black"></Border>
+		<Border  x:Name="BaseGrid" MouseLeftButtonDown="BaseGrid_MouseLeftButtonDown" Grid.Column="0" Background="Black"></Border>
+		
 		<StackPanel Grid.Column="0" Margin=" 0 10 0 0">
 			<TextBlock Margin="0 40 0 10" Width="100" VerticalAlignment="Center"  x:Name="NewBtn" MouseLeftButtonDown= "NewBtn_Click" FontSize="16" Foreground="White">
 				New
@@ -26,10 +28,10 @@
 				Open
 			</TextBlock>
 			<TextBlock Margin="0 10" Width="100" VerticalAlignment="Center" x:Name="SaveBtn" MouseLeftButtonDown="SaveBtn_Click" FontSize="16" Foreground="White">
-					Save
+				Save
 			</TextBlock>
 			<TextBlock Margin="0 10" Width="100" VerticalAlignment="Center" x:Name="SaveAsBtn" MouseLeftButtonDown="SaveAsBtn_Click" FontSize="16" Foreground="White">
-					Save As
+				Save As
 			</TextBlock>
 
 			<!-- FontSize selection-->
@@ -55,8 +57,7 @@
 		</StackPanel>
 
 		<!--Right note taking area-->
-		
-		<Border x:Name="TxtBorder" Grid.Column="1" Background="White">
+		<Border x:Name="TxtBorder" MouseLeftButtonDown="TxtBorder_MouseLeftButtonDown" Grid.Column="1" Background="White">
 			<StackPanel>
 				<TextBox Height="50" Margin="20 0" x:Name="Title" Grid.Column="1" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="18" BorderThickness="0" Background="Transparent">
 					Welcome!

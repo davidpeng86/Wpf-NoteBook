@@ -150,7 +150,6 @@ namespace Note
                 ThemeBtn.Fill = Brushes.White;
                 TxtBorder.Background = (SolidColorBrush)new BrushConverter().ConvertFromString("#202020");
                 ChangeTheme(Brushes.Gray, DarkFg);
-
             }
             else
             {
@@ -201,7 +200,12 @@ namespace Note
 
         private void BaseGrid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            //this.DragMove();
+            DragMove();
+        }
+
+        private void TxtBorder_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
         }
     }
 }
